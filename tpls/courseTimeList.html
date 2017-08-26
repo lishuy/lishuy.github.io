@@ -1,0 +1,55 @@
+<div class="courseTimeList">
+    <ol class="breadcrumb">
+        <li><a href="#">课时管理</a></li>
+        <li class="active">课时列表</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-10" cs_id="{{cs_id}}">
+            <button class="btn btn-success btn-add">添加课时</button>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">课时基本信息</div>
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" width="120px" src="{{cs_cover=='http://static.botue.com/images/cover/?'?'imgs/course.png':cs_cover}}" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div>课程名称：{{cs_name}}</div>
+                    <div>讲师名称：{{tc_name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">课时信息</div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>时长</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{each lessons v}}
+                    <tr>
+                        <td>{{v.ct_id}}</td>
+                        <td>{{v.ct_name}}</td>
+                        <td>{{v.ct_video_duration}}</td>
+                        <td ct_id="{{v.ct_id}}">
+                            <button type="button" class="btn btn-primary btn-edit">编辑</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="modal fade" id="teacherEditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">编辑讲师</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-10">
+                            <input name='tc_name' type="text" class="form-control" value="{{tc_name}}">
+                            <input type="hidden" name="tc_id" value="{{tc_id}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio"  {{tc_gender==0?'checked="checked"':''}} name="tc_gender" value="0"> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" {{tc_gender==1?'checked="checked"':''}} name="tc_gender"  value="1"> 女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">入职时间</label>
+                        <div class="col-sm-10">
+                            <input name="tc_join_date" type="text" class="form-control joinDate" value="{{tc_join_date}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">类型</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="tc_type">
+                               <option {{tc_type==0?'selected="selected"':""}} value="0">管理员</option>
+                               <option {{tc_type==1?'selected="selected"':""}} value="1">讲师</option>
+                           </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-5">
+                            <button type="submit" class="btn btn-success">提交</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
